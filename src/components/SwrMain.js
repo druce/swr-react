@@ -38,6 +38,8 @@ export class SwrMain extends Component {
             portval_df: PORTVAL_DF,
             profile_df: PROFILE_DF,
             survival_df: SURVIVAL_DF,
+            risk_index: -1,
+            risk_label: "(None)"
         };
 
         this.handleStockChange = this.handleStockChange.bind(this);

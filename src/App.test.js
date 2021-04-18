@@ -33,26 +33,11 @@ test('Click Button 1 (Bengen)', () => {
 
 });
 
-test('Click Button 2 (Relaxed 4%/5%)', () => {
-    render(<App />);
-    fireEvent.click(screen.getByTestId(/button2/));
-    expect(screen.getByTestId(/stock_alloc_pct_label/)).toHaveTextContent('Stocks %: 50');
-    expect(screen.getByTestId(/bond_alloc_pct_label/)).toHaveTextContent('Bonds %: 50');
-    expect(screen.getByTestId(/withdrawal_fixed_label/)).toHaveTextContent('Fixed %: -1');
-    expect(screen.getByTestId(/withdrawal_variable_label/)).toHaveTextContent('Variable %: 5');
-    expect(screen.getByTestId(/withdrawal_floor_label/)).toHaveTextContent('Floor %: 4');
-    expect(screen.getByTestId(/start_spend/)).toHaveTextContent('4.0');
-    expect(screen.getByTestId(/mean_spend/)).toHaveTextContent('5.7');
-    expect(screen.getByTestId(/worst_spend/)).toHaveTextContent('4.0');
-    expect(screen.getByTestId(/pct_exhausted/)).toHaveTextContent('0.0');
-
-});
-
-test('Click Button 3 (high risk aversion)', () => {
+test('Click Button 3 (low risk aversion)', () => {
     render(<App />);
     fireEvent.click(screen.getByTestId(/button3/));
-    expect(screen.getByTestId(/stock_alloc_pct_label/)).toHaveTextContent('Stocks %: 73');
-    expect(screen.getByTestId(/bond_alloc_pct_label/)).toHaveTextContent('Bonds %: 27');
+    expect(screen.getByTestId(/stock_alloc_pct_label/)).toHaveTextContent('Stocks %: 75');
+    expect(screen.getByTestId(/bond_alloc_pct_label/)).toHaveTextContent('Bonds %: 25');
     expect(screen.getByTestId(/withdrawal_fixed_label/)).toHaveTextContent('Fixed %: 3.5');
     expect(screen.getByTestId(/withdrawal_variable_label/)).toHaveTextContent('Variable %: 1.1');
     expect(screen.getByTestId(/withdrawal_floor_label/)).toHaveTextContent('Floor %: 3.8');
@@ -63,16 +48,16 @@ test('Click Button 3 (high risk aversion)', () => {
 
 });
 
-test('Click Button 4 (low risk aversion)', () => {
+test('Click Button 4 (high risk aversion)', () => {
     render(<App />);
     fireEvent.click(screen.getByTestId(/button4/));
-    expect(screen.getByTestId(/stock_alloc_pct_label/)).toHaveTextContent('Stocks %: 89');
-    expect(screen.getByTestId(/bond_alloc_pct_label/)).toHaveTextContent('Bonds %: 11');
-    expect(screen.getByTestId(/withdrawal_fixed_label/)).toHaveTextContent('Fixed %: 0.7');
-    expect(screen.getByTestId(/withdrawal_variable_label/)).toHaveTextContent('Variable %: 5.8');
+    expect(screen.getByTestId(/stock_alloc_pct_label/)).toHaveTextContent('Stocks %: 88');
+    expect(screen.getByTestId(/bond_alloc_pct_label/)).toHaveTextContent('Bonds %: 12');
+    expect(screen.getByTestId(/withdrawal_fixed_label/)).toHaveTextContent('Fixed %: 2.6');
+    expect(screen.getByTestId(/withdrawal_variable_label/)).toHaveTextContent('Variable %: 3');
     expect(screen.getByTestId(/withdrawal_floor_label/)).toHaveTextContent('Floor %: 3.4');
-    expect(screen.getByTestId(/start_spend/)).toHaveTextContent('6.5');
-    expect(screen.getByTestId(/mean_spend/)).toHaveTextContent('7.5');
+    expect(screen.getByTestId(/start_spend/)).toHaveTextContent('5.6');
+    expect(screen.getByTestId(/mean_spend/)).toHaveTextContent('6.9');
     expect(screen.getByTestId(/worst_spend/)).toHaveTextContent('3.4');
     expect(screen.getByTestId(/pct_exhausted/)).toHaveTextContent('0.0');
 
