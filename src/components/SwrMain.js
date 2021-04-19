@@ -10,6 +10,7 @@ import { PORTVAL_DF } from '../js/portval_df.js';
 import { PROFILE_DF } from '../js/profile_df.js';
 import { SURVIVAL_DF } from '../js/survival_df.js';
 import ReactGA from 'react-ga';
+import Helmet from 'react-helmet';
 
 // sort arr1 per order in arr2
 // const dsu = (arr1, arr2) => {
@@ -219,6 +220,10 @@ export class SwrMain extends Component {
     render() {
         return (
             <div>
+                <Helmet>
+                <title>Druce.ai Safe Withdrawal for Retirement calculator</title>
+                <meta name="description" content="The Safe Withdrawal for Retirement Calculator lets you set asset allocation and withdrawal parameters, and shows all historical outcome paths for 30-year retirements 1928-1991." />
+                </Helmet>
                 <SwrHeader />
                 <SwrSliders mainObj={this} />
                 <SwrDescription {...this.state} />
